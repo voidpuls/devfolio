@@ -1,0 +1,65 @@
+/* General Styles */
+body {
+    background-color: black;
+    font-family: 'Monospace', sans-serif;
+    color: aliceblue;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .logo span {
+    color: #f4a261;
+}
+
+.progress-bar-sm {
+    height: 0.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    animation: grow 1.5s ease-in-out;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.timeline li h5 {
+    margin-bottom: 0.25rem;
+}
+
+.timeline li p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+/* Contact Form Styling */
+#contact {
+    background-color: #f8f9fa;
+}
+
+#contact .form-label {
+    font-weight: 600;
+}
+
+#contact .form-control {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-status {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
