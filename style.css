@@ -30,26 +30,58 @@ header .logo span {
     animation: grow 1.5s ease-in-out;
 }
 
+
+/* Timeline Container */
 .timeline {
-    list-style: none;
-    padding: 0;
-}
-
-.timeline li {
+    list-style-type: none;
+    padding-left: 40px; /* Gerekli boşluğu ekleyelim */
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 15px;
 }
 
-.timeline li h5 {
-    margin-bottom: 0.25rem;
+/* Vertical Line for Timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px; /* Sol taraftan çizgiyi biraz içeri çekelim */
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    transform: translateX(-50%);
+    z-index: -1; /* Çizgiyi arka plana alalım */
 }
 
-.lite-text{
+/* Dot in the Timeline */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007bff;
+    position: absolute;
+    left: -20px;
+    transform: translateX(-50%);
+    border: 3px solid white;
+}
+
+/* Each Step on Timeline */
+.timeline-step {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Content next to the Timeline Dot */
+.timeline-content {
+    margin-left: 40px;
+}
+
+
+.lite-text {
     color: #8a7c7c;
 }
 
-.lite-text{
+.lite-text {
     margin-bottom: 0;
     color: #8a7c7c;
 }
@@ -64,14 +96,19 @@ header .logo span {
 }
 
 .card-img-top {
-    max-height: 200px;       /* Resmin maksimum yüksekliği */
-    width: 100%;             /* Genişlik karta uyacak şekilde ayarlanır */
-    object-fit:cover;     /* Resmi orantılı şekilde sığdır */
+    max-height: 200px;
+    /* Resmin maksimum yüksekliği */
+    width: 100%;
+    /* Genişlik karta uyacak şekilde ayarlanır */
+    object-fit: cover;
+    /* Resmi orantılı şekilde sığdır */
 }
 
 .card:hover {
-    transform: scale(1.05); /* Kartı %5 büyütür */
-    transition: transform 0.3s ease-in-out; /* Büyüme efekti */
+    transform: scale(1.05);
+    /* Kartı %5 büyütür */
+    transition: transform 0.3s ease-in-out;
+    /* Büyüme efekti */
 }
 
 .mt-auto {
