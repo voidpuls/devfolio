@@ -80,10 +80,22 @@ header .logo span {
     text-overflow: ellipsis;
 }
 
+.card{
+    background-color: rgb(25, 23, 23);
+    color: #857a7a;
+    border-radius: 3%;
+}
+
+.card-title{
+    color: rgb(166, 168, 173);
+}
+
 .card-img-top {
     max-height: 200px;
     width: 100%;
     object-fit: cover;
+    padding: 10px;
+    border-radius: 9%;
 }
 
 .card:hover {
@@ -93,4 +105,8 @@ header .logo span {
 
 .mt-auto {
     margin-top: auto;
+}
+
+#projects hr{
+    margin-top: 5px;
 }
