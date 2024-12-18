@@ -1,8 +1,11 @@
-/* General Styles */
 body {
     background-color: rgb(31, 28, 28);
     font-family: "Monospace", sans-serif;
     color: rgb(255, 255, 255);
+}
+
+.navbar{
+    background-color: rgb(43, 39, 39);
 }
 
 #welcome,
@@ -19,39 +22,24 @@ header .logo span {
     color: #f4a261;
 }
 
-.progress-bar-sm {
-    height: 0.5rem;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    animation: grow 1.5s ease-in-out;
-}
-
-
-/* Timeline Container */
 .timeline {
     list-style-type: none;
-    padding-left: 40px; /* Gerekli boşluğu ekleyelim */
+    padding-left: 40px;
     position: relative;
 }
 
-/* Vertical Line for Timeline */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 18px; /* Sol taraftan çizgiyi biraz içeri çekelim */
+    left: 19px;
     width: 2px;
     height: 100%;
     background-color: #ccc;
     transform: translateX(-50%);
-    z-index: -1; /* Çizgiyi arka plana alalım */
+    z-index: -1;
 }
 
-/* Dot in the Timeline */
 .timeline-dot {
     width: 20px;
     height: 20px;
@@ -63,7 +51,6 @@ header .logo span {
     border: 3px solid white;
 }
 
-/* Each Step on Timeline */
 .timeline-step {
     display: flex;
     align-items: center;
@@ -71,11 +58,54 @@ header .logo span {
     margin-bottom: 30px;
 }
 
-/* Content next to the Timeline Dot */
 .timeline-content {
     margin-left: 40px;
 }
 
+ /* Level Bar Container */
+ .level-bar {
+    background-color: #e4d8d8;
+    border-radius: 10px;
+    position: relative;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Progress Indicator */
+.level-bar .progress {
+    height: 100%;
+    border-radius: 10px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    width: 0; /* Default width set to 0 for animation */
+    transition: width 2s ease-in-out; /* Smooth animation */
+}
+
+/* Additional Styling for Text Inside Bar */
+.level-bar .progress::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 8px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 12.5%,
+        transparent 12.5%,
+        transparent 25%
+    );
+    opacity: 0.3;
+}
 
 .lite-text {
     color: #8a7c7c;
@@ -97,18 +127,13 @@ header .logo span {
 
 .card-img-top {
     max-height: 200px;
-    /* Resmin maksimum yüksekliği */
     width: 100%;
-    /* Genişlik karta uyacak şekilde ayarlanır */
     object-fit: cover;
-    /* Resmi orantılı şekilde sığdır */
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* Kartı %5 büyütür */
-    transition: transform 0.3s ease-in-out;
-    /* Büyüme efekti */
+    transition: transform 0.25s ease-in-out;
 }
 
 .mt-auto {
