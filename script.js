@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     //Set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-    
+
     // Doğrudan Medium RSS feed URL'si
     const rssFeedUrl = "https://medium.com/feed/@kerimsenturk5734";
     const blogsContainer = document.getElementById("blogs-container");
@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const pubDate = item.querySelector("pubDate")?.textContent;
 
                     let thumbnailURL;
-                    item.childNodes.forEach((node)=>{
+                    item.childNodes.forEach((node) => {
                         // get content
-                        if(node.nodeName === "content:encoded")
+                        if (node.nodeName === "content:encoded")
                             // parse thumbnail element from content
                             thumbnailURL = node.textContent.match(/<img[^>]+src="([^">]+)"/)?.at(1);
                     })
@@ -59,4 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("RSS feed yükleme hatası:", error);
             blogsContainer.innerHTML = `<p class="text-center text-danger">An error occurred while fetching the RSS feed.</p>`;
         });
+
+
+    //Contact
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        // Get form values
+        const email = "email@example.com";
+        const name = document.getElementById("name").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value + "\n\n" + "---------------" + "\n" + name;
+
+        // Construct mailto link
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+        // Open the mailto link
+        window.location.href = mailtoLink;
+    });
 });
