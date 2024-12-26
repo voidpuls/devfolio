@@ -2,26 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
     //Set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Doğrudan Medium RSS feed URL'si
+    // Medium RSS Feed URL
     const rssFeedUrl = "https://medium.com/feed/@kerimsenturk5734";
     const blogsContainer = document.getElementById("blogs-container");
 
-    // RSS verisini almak için bir proxy servisi kullanıyoruz
+    // Use proxy server to get RSS data
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssFeedUrl)}`;
 
-    // RSS verisini çek
+    // GET RSS data
     fetch(proxyUrl)
         .then((response) => response.json())
         .then((data) => {
             //Clear the loading animation from container
             document.getElementById("loading-spinner").remove();
-            // Gelen veriyi XML formatından parse et
+            // Parse the response to XML
             const parser = new DOMParser();
             const xml = parser.parseFromString(data.contents, "application/xml");
             const items = xml.querySelectorAll("item");
             if (items.length > 0) {
                 items.forEach((item) => {
-                    // XML verisinden başlık, link, açıklama, ve thumbnail bilgilerini al
+                    // extract values from xml data
                     const title = item.querySelector("title")?.textContent;
                     const link = item.querySelector("link")?.textContent;
                     const pubDate = item.querySelector("pubDate")?.textContent;
@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             thumbnailURL = node.textContent.match(/<img[^>]+src="([^">]+)"/)?.at(1);
                     })
 
-                    // Blog içeriğini oluştur
-                    //<img src="${thumbnailURL}" class="card-img-top" alt="${title}">
+                    // Create blog html element
                     const blogCard = `
                         <div class="col-md-4">
                             <a href="${link}" class="text-decoration-none" target="_blank">
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch((error) => {
-            console.error("RSS feed yükleme hatası:", error);
+            console.error("RSS loading error:", error);
             blogsContainer.innerHTML = `<p class="text-center text-danger">An error occurred while fetching the RSS feed.</p>`;
         });
 
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contactForm").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent form from submitting normally
 
-        // Get form values
+        // Create email values from form
         const email = "email@example.com";
         const name = document.getElementById("name").value;
         const subject = document.getElementById("subject").value;
