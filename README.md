@@ -1,10 +1,8 @@
 <div align="center">
-  <h1 style="font-size: 3em; color: #FFFFFF; display: inline;">Dev</h1>
-  <h1 style="font-size: 3em; color: #FFC107; display: inline;">Folio</h1>
-  <h6 align="right" style="color: #FFFFFF; display: inline;">v1.0</h6>
+  <img src="docs/media/devfolio-brand.png" alt="DevFolio Brand" width="300"/> 
 
+  **v1.0**
   [**Turkish**](docs/README_tr.md) - [**English**](README.md)
-
   <hr>
 </div>
 
