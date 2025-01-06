@@ -4,12 +4,11 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.navbar{
+.navbar {
     background-color: rgb(43, 39, 39);
 }
 
-#welcome,
-#hero {
+#welcome, #hero {
     font-size: x-large;
 }
 
@@ -61,14 +60,9 @@ header .logo span {
     margin-left: 40px;
 }
 
-
 .lite-text {
     color: #8a7c7c;
-}
-
-.lite-text {
     margin-bottom: 0;
-    color: #8a7c7c;
 }
 
 .multiline-truncate {
@@ -80,13 +74,13 @@ header .logo span {
     text-overflow: ellipsis;
 }
 
-.card{
+.card {
     background-color: rgb(25, 23, 23);
     color: #857a7a;
     border-radius: 3%;
 }
 
-.card-title{
+.card-title {
     color: rgb(166, 168, 173);
 }
 
@@ -107,6 +101,6 @@ header .logo span {
     margin-top: auto;
 }
 
-#projects hr{
+#projects hr {
     margin-top: 5px;
 }
