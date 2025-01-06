@@ -12,7 +12,6 @@ You can access the demo application [**here**]().
 
 ## Features
 
-<hr>
 
 ### 1. Navigation Bar
 
@@ -101,7 +100,6 @@ The application can be displayed properly on screens of different sizes.
 
 ## Targeted Features in the New Version (v1.1)
 
-<hr>
 
 - **Dynamic Data Management**
   It is aimed to provide dynamic data configuring where users can more easily manage portfolio information such as experience, education, and about me.
@@ -114,7 +112,6 @@ The application can be displayed properly on screens of different sizes.
 
 ## Built With
 
-<hr>
 
 - **HTML/CSS**
 - **JavaScript**
@@ -123,7 +120,6 @@ The application can be displayed properly on screens of different sizes.
 - [**Colors CSS 3.0.0**](https://github.com/mrmrs/colors)
 
 ## Contribution
-<hr>
 If you want to contribute to this project, you can follow the steps below:
 
 1. **Fork** the repository.

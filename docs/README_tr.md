@@ -1,10 +1,8 @@
 <div align="center">
-  <h1 style="font-size: 3em; color: #FFFFFF; display: inline;">Dev</h1>
-  <h1 style="font-size: 3em; color: #FFC107; display: inline;">Folio</h1>
-  <h6 align="right" style="color: #FFFFFF; display: inline;">v1.0</h6>
+  <img src="docs/media/devfolio-brand.png" alt="DevFolio Brand" width="300"/> 
 
-  [**Turkish**](README_tr.md) - [**English**](../README.md)
-
+  **v1.0**
+  [**Turkish**](docs/README_tr.md) - [**English**](README.md)
   <hr>
 </div>
 
@@ -14,7 +12,6 @@ DevFolio, basit, sade bir portföy sitesini kolayca oluşturmanıza olanak tanı
 
 ## Özellikler
 
-<hr>
 
 ### 1. Navigation Bar
 
@@ -103,7 +100,6 @@ Uygulama farklı boyuttaki ekranlarda da düzgün bir şekilde görüntülenebil
 
 ## Yeni Sürümde Hedeflenen Özellikler (v1.1)
 
-<hr>
 
 - **Dinamik Veri Yönetimi**
   Kullanıcların deneyim, eğitim, hakkımda gibi portföy bilgilerini daha rahat yönetebileceği dinamik veri yapılandırmasının sağlanması hedefleniyor.
@@ -116,7 +112,6 @@ Uygulama farklı boyuttaki ekranlarda da düzgün bir şekilde görüntülenebil
 
 ## Kullanılan Teknolojiler
 
-<hr>
 
 - **HTML/CSS**
 - **JavaScript**
@@ -126,7 +121,6 @@ Uygulama farklı boyuttaki ekranlarda da düzgün bir şekilde görüntülenebil
 
 ## Katkıda Bulunun
 
-<hr>
 
 Bu projeye katkı sağlamak isterseniz, aşağıdaki adımları takip edebilirsiniz:
 
