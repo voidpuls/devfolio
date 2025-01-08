@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Prevent form from submitting normally
 
         // Collect form data
-        const email = "email@example.com"; // Change this to the desired email address
+        const email = "kbennet475@gmail.com"; // Change this to the desired email address
         const name = document.getElementById("name").value;
         const subject = document.getElementById("subject").value;
         const message = `${document.getElementById("message").value}\n\n---------------\n${name}`;
