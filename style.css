@@ -1,71 +1,213 @@
+/* style.css */
+
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #1a1a1a;
-    color: #dcdcdc;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #222; /* Darker text for headings */
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.lite-text {
+    font-weight: 300;
+    color: #555; /* Lighter text for descriptions */
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
 
 /* Navbar */
 .navbar {
-    background: rgba(44, 40, 37, 0.9);
-    transition: all 0.3s ease-in-out;
+    background-color: #333; /* Dark navy background */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
-.navbar-brand span {
-    color: #8db600;
+
+.navbar:hover {
+    background-color: #222; /* Darker navy on hover */
 }
-.navbar-nav .nav-link {
-    transition: 0.3s;
+
+.navbar-brand {
+    color: #fff; /* White text for brand */
 }
-.navbar-nav .nav-link:hover {
-    color: #8db600;
+
+.navbar-brand span.text-warning {
+    color: #ffc107; /* Yellow highlight for brand */
 }
+
 
 /* Welcome Section */
 #welcome {
-    background: linear-gradient(to right, rgba(77, 46, 0, 0.8), rgba(96, 67, 26, 0.8));
-    animation: fadeIn 1.5s ease-in-out;
+    background-image: url('/img/background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    color: white; /* White text on background image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
 }
 
 /* Hero Section */
-#hero img {
-    border: 5px solid #8db600;
-    transition: transform 0.3s;
-}
-#hero img:hover {
-    transform: scale(1.1);
+#hero {
+    animation: fadeIn 1s ease; /* Fade-in animation */
 }
 
-/* Buttons */
-.btn {
-    transition: all 0.3s;
-    border-radius: 10px;
-}
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* Projects */
-#projects .card {
-    background: #2c2825;
-    border: 1px solid #8db600;
-    transition: 0.3s;
-}
-#projects .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 15px rgba(141, 182, 0, 0.5);
-}
-
-/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Apply Animations */
-#about, #edu_exp, #projects, #contact {
-    animation: slideUp 1s ease-in-out;
+#hero img {
+    border: 5px solid #fff; /* Add a border to the profile image */
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5); /* Add a box shadow */
+}
+
+/* About Section */
+#about {
+    background-color: #f9f9f9; /* Light gray background for about section */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
+}
+
+#about h2 {
+    background-color: #ffc107; /* Yellow background for about heading */
+    color: #333;
+    padding: 10px 20px;
+}
+
+/* Timeline */
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease; /* Slide-in animation for timeline items */
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+hr {
+    border: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+/* Project Cards */
+.card {
+    border: none; /* Remove default card border */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for animations */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2); /* Enhanced box shadow on hover */
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+.card img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.technologies {
+    margin-top: 10px;
+}
+
+
+/* Contact Section */
+#contact {
+    background-color: #f9f9f9; /* Light gray background for contact section */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
+}
+
+#contact h2 {
+    background-color: #ffc107; /* Yellow background for contact heading */
+    color: #333;
+    padding: 10px 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Dark navy background for footer */
+    color: #fff; /* White text for footer */
+}
+
+
+/* Custom Color Variables */
+:root {
+    --primary: #007bff; /* Blue */
+    --secondary: #6c757d; /* Gray */
+    --success: #28a745; /* Green */
+    --warning: #ffc107; /* Yellow */
+    --danger: #dc3545; /* Red */
+    --info: #17a2b8; /* Blue */
+    --light: #f8f9fa; /* Light gray */
+    --dark: #343a40; /* Dark gray */
+    --maroon: #800000; /* Maroon */
+    --orange: #ffa500; /* Orange */
+    --purple: #800080; /* Purple */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero .row {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+    #projects .col-md-3 {
+        width: 100%; /* Make project cards occupy full width */
+    }
+    #contact .col-md-4, #contact .col-md-6 {
+        width: 100%; /* Make contact info and form occupy full width */
+    }
 }
