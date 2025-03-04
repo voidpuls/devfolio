@@ -1,162 +1,77 @@
-/* style.css */
+/* Slime-Themed CSS for Homepage */
 
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    background: #1a1a1a;
+    color: rgb(220, 220, 220);
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light gray background */
-    color: #333; /* Dark gray text */
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
-    position: relative; /* To position particles in the background */
 }
 
-/* Slime Theme Colors */
-:root {
-    --primary: #66CDAA; /* Medium Aquamarine */
-    --secondary: #8FBC8F; /* DarkSeaGreen */
-    --accent: #008080; /* Teal */
-    --dark: #336666; /* DarkCyan */
-    --light: #D3D3D3; /* LightGray */
-}
-
-/* Typography */
-h1, h2, h3, h4, h5 {
-    font-weight: 700;
-    color: var(--dark);
-}
-
-h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 2rem;
-}
-
-.lite-text {
-    font-weight: 300;
-    color: var(--light);
-}
-
-.fw-bold {
+header {
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
     font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--dark);
-    transition: background-color 0.3s ease;
+nav {
+    background: rgba(128, 70, 27, 0.9);
+    padding: 10px;
+    text-align: center;
 }
 
-.navbar:hover {
-    background-color: var(--primary);
+nav a {
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
 
-.navbar-brand {
-    color: var(--light);
+nav a:hover {
+    color: #8bc34a;
 }
 
-.navbar-brand span.text-warning {
-    color: var(--accent);
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
 }
 
-
-/* Welcome Section */
-#welcome {
-    background-image: url('/img/slime-background.jpg'); /* Replace with slime background image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: slimeBackgroundAnimation 10s ease-in-out infinite; /* Animate background */
-}
-
-@keyframes slimeBackgroundAnimation {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    50% {
-        filter: hue-rotate(30deg);
-    }
-    100% {
-        filter: hue-rotate(0deg);
-    }
-}
-
-/* Hero Section */
-#hero {
-    animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-#hero img {
-    border: 5px solid var(--light);
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
-    animation: slimeWiggle 3s ease-in-out infinite; /* Wiggle animation */
-}
-
-@keyframes slimeWiggle {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-5px, 5px); }
-    50% { transform: translate(5px, -5px); }
-    75% { transform: translate(-5px, -5px); }
-}
-
-/* About Section */
-#about {
-    background-color: var(--light);
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-}
-
-#about h2 {
-    background-color: var(--accent);
-    color: var(--dark);
+.button {
+    background: rgb(141, 182, 0);
     padding: 10px 20px;
-}
-
-/* Other sections (similar adjustments as above) */
-
-/* Project Cards */
-.card {
+    border-radius: 12px;
     border: none;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slimeBounce 2s ease-in-out infinite; /* Bounce animation */
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-@keyframes slimeBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.button:hover {
+    background: rgb(96, 67, 26);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
 }
 
-
-/* Contact Section */
-#contact {
-    background-color: var(--light);
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+.footer {
+    background: rgba(44, 40, 37, 0.9);
+    color: rgb(220, 220, 220);
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
-
-#contact h2 {
-    background-color: var(--accent);
-    color: var(--dark);
-    padding: 10px 20px;
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark);
-    color: var(--light);
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Adjust for your theme */
+  z-index: -1;
 }
