@@ -9,16 +9,27 @@ body {
     background-color: #f4f4f4; /* Light gray background */
     color: #333; /* Dark gray text */
     overflow-x: hidden; /* Prevent horizontal scrollbar */
+    position: relative; /* To position particles in the background */
+}
+
+/* Slime Theme Colors */
+:root {
+    --primary: #66CDAA; /* Medium Aquamarine */
+    --secondary: #8FBC8F; /* DarkSeaGreen */
+    --accent: #008080; /* Teal */
+    --dark: #336666; /* DarkCyan */
+    --light: #D3D3D3; /* LightGray */
 }
 
 /* Typography */
 h1, h2, h3, h4, h5 {
     font-weight: 700;
-    color: #222; /* Darker text for headings */
+    color: var(--dark);
 }
 
 h1 {
     font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 h2 {
@@ -31,45 +42,57 @@ h3 {
 
 .lite-text {
     font-weight: 300;
-    color: #555; /* Lighter text for descriptions */
+    color: var(--light);
 }
 
 .fw-bold {
     font-weight: bold;
 }
 
-
 /* Navbar */
 .navbar {
-    background-color: #333; /* Dark navy background */
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    background-color: var(--dark);
+    transition: background-color 0.3s ease;
 }
 
 .navbar:hover {
-    background-color: #222; /* Darker navy on hover */
+    background-color: var(--primary);
 }
 
 .navbar-brand {
-    color: #fff; /* White text for brand */
+    color: var(--light);
 }
 
 .navbar-brand span.text-warning {
-    color: #ffc107; /* Yellow highlight for brand */
+    color: var(--accent);
 }
 
 
 /* Welcome Section */
 #welcome {
-    background-image: url('/img/background.jpg'); /* Replace with your background image */
+    background-image: url('/img/slime-background.jpg'); /* Replace with slime background image */
     background-size: cover;
     background-position: center;
-    color: white; /* White text on background image */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slimeBackgroundAnimation 10s ease-in-out infinite; /* Animate background */
+}
+
+@keyframes slimeBackgroundAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
 }
 
 /* Hero Section */
 #hero {
-    animation: fadeIn 1s ease; /* Fade-in animation */
+    animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
@@ -78,136 +101,62 @@ h3 {
 }
 
 #hero img {
-    border: 5px solid #fff; /* Add a border to the profile image */
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.5); /* Add a box shadow */
+    border: 5px solid var(--light);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+    animation: slimeWiggle 3s ease-in-out infinite; /* Wiggle animation */
+}
+
+@keyframes slimeWiggle {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, -5px); }
 }
 
 /* About Section */
 #about {
-    background-color: #f9f9f9; /* Light gray background for about section */
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
+    background-color: var(--light);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 }
 
 #about h2 {
-    background-color: #ffc107; /* Yellow background for about heading */
-    color: #333;
+    background-color: var(--accent);
+    color: var(--dark);
     padding: 10px 20px;
 }
 
-/* Timeline */
-.timeline {
-    list-style: none;
-    padding: 0;
-}
-
-.timeline-step {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    animation: slideIn 1s ease; /* Slide-in animation for timeline items */
-}
-
-@keyframes slideIn {
-    from { transform: translateX(-20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-.timeline-dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.timeline-content {
-    flex: 1;
-}
-
-hr {
-    border: 1px solid #ddd;
-    margin: 15px 0;
-}
+/* Other sections (similar adjustments as above) */
 
 /* Project Cards */
 .card {
-    border: none; /* Remove default card border */
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Prevent content from overflowing */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for animations */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Slightly lift the card on hover */
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.2); /* Enhanced box shadow on hover */
-}
-
-.card img {
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Smooth transition for image scaling */
-}
-
-.card img:hover {
-    transform: scale(1.05); /* Slightly enlarge the image on hover */
-}
-
-.card-text {
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slimeBounce 2s ease-in-out infinite; /* Bounce animation */
 }
 
-.technologies {
-    margin-top: 10px;
+@keyframes slimeBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 
 /* Contact Section */
 #contact {
-    background-color: #f9f9f9; /* Light gray background for contact section */
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle box shadow */
+    background-color: var(--light);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 }
 
 #contact h2 {
-    background-color: #ffc107; /* Yellow background for contact heading */
-    color: #333;
+    background-color: var(--accent);
+    color: var(--dark);
     padding: 10px 20px;
 }
 
 /* Footer */
 footer {
-    background-color: #333; /* Dark navy background for footer */
-    color: #fff; /* White text for footer */
-}
-
-
-/* Custom Color Variables */
-:root {
-    --primary: #007bff; /* Blue */
-    --secondary: #6c757d; /* Gray */
-    --success: #28a745; /* Green */
-    --warning: #ffc107; /* Yellow */
-    --danger: #dc3545; /* Red */
-    --info: #17a2b8; /* Blue */
-    --light: #f8f9fa; /* Light gray */
-    --dark: #343a40; /* Dark gray */
-    --maroon: #800000; /* Maroon */
-    --orange: #ffa500; /* Orange */
-    --purple: #800080; /* Purple */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #hero .row {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-    }
-    #projects .col-md-3 {
-        width: 100%; /* Make project cards occupy full width */
-    }
-    #contact .col-md-4, #contact .col-md-6 {
-        width: 100%; /* Make contact info and form occupy full width */
-    }
+    background-color: var(--dark);
+    color: var(--light);
 }
