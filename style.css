@@ -1,106 +1,71 @@
+/* General Styles */
 body {
-    background-color: rgb(31, 28, 28);
-    font-family: "Monospace", sans-serif;
-    color: rgb(255, 255, 255);
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a1a;
+    color: #dcdcdc;
 }
 
+/* Navbar */
 .navbar {
-    background-color: rgb(43, 39, 39);
+    background: rgba(44, 40, 37, 0.9);
+    transition: all 0.3s ease-in-out;
+}
+.navbar-brand span {
+    color: #8db600;
+}
+.navbar-nav .nav-link {
+    transition: 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #8db600;
 }
 
-#welcome, #hero {
-    font-size: x-large;
+/* Welcome Section */
+#welcome {
+    background: linear-gradient(to right, rgba(77, 46, 0, 0.8), rgba(96, 67, 26, 0.8));
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* Hero Section */
+#hero img {
+    border: 5px solid #8db600;
+    transition: transform 0.3s;
+}
+#hero img:hover {
+    transform: scale(1.1);
 }
 
-header .logo span {
-    color: #f4a261;
+/* Buttons */
+.btn {
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+.btn:hover {
+    transform: translateY(-3px);
 }
 
-.timeline {
-    list-style-type: none;
-    padding-left: 40px;
-    position: relative;
+/* Projects */
+#projects .card {
+    background: #2c2825;
+    border: 1px solid #8db600;
+    transition: 0.3s;
 }
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 19px;
-    width: 2px;
-    height: 100%;
-    background-color: #ccc;
-    transform: translateX(-50%);
-    z-index: -1;
-}
-
-.timeline-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #007bff;
-    position: absolute;
-    left: -20px;
-    transform: translateX(-50%);
-    border: 3px solid white;
-}
-
-.timeline-step {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.timeline-content {
-    margin-left: 40px;
-}
-
-.lite-text {
-    color: #8a7c7c;
-    margin-bottom: 0;
-}
-
-.multiline-truncate {
-    display: -webkit-box;
-    line-clamp: 10;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card {
-    background-color: rgb(25, 23, 23);
-    color: #857a7a;
-    border-radius: 3%;
-}
-
-.card-title {
-    color: rgb(166, 168, 173);
-}
-
-.card-img-top {
-    max-height: 200px;
-    width: 100%;
-    object-fit: cover;
-    padding: 10px;
-    border-radius: 9%;
-}
-
-.card:hover {
+#projects .card:hover {
     transform: scale(1.05);
-    transition: transform 0.25s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(141, 182, 0, 0.5);
 }
 
-.mt-auto {
-    margin-top: auto;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-#projects hr {
-    margin-top: 5px;
+/* Apply Animations */
+#about, #edu_exp, #projects, #contact {
+    animation: slideUp 1s ease-in-out;
 }
